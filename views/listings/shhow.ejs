@@ -31,15 +31,18 @@
 
         </div>
         <br>
-
     </div>
-    <div class="btns">
-        <a class="btn btn-dark col-1 offset-3 add" href="/listings/<%= listing._id %>/edit">Edit</a>
-
-        <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
-            <button class="btn btn-dark offset-2">Delete</button>
-        </form>
-    </div>
+    
+    <% if(currUser && currUser._id.equals(listing.owner._id)) { %>
+        <div class="btns">
+            <a class="btn btn-dark col-1 offset-3 add" href="/listings/<%= listing._id %>/edit">Edit</a>
+    
+            <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
+                <button class="btn btn-dark offset-2">Delete</button>
+            </form>
+        </div>
+        <% } %>
+    
 
     <div class="col-8 offset-3 mb-3 mt-1">
         <hr>
