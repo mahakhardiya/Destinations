@@ -4,24 +4,22 @@
             <br><br>
             <h2>Create a new Listing</h2>
 
-            <form method="POST" action="/listings" novalidate class="needs-validation">
+            <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="title" class="form-label"><b>Title</b></label>
-                    <input type="text" name="listing[title]" placeholder="enter title" class="form-control"
-                    required>
+                    <input type="text" name="listing[title]" placeholder="enter title" class="form-control" required>
                     <div class="valid-feedback">Title looks good!</div>
                 </div>
 
                 <div class="mb-3">
                     <label for="description" class="form-label"><b>Description</b></label>
-                    <textarea name="listing[description]" placeholder="enter description"
-                        class="form-control" required></textarea>
+                    <textarea name="listing[description]" placeholder="enter description" class="form-control"
+                        required></textarea>
 
                 </div>
                 <div class="mb-3">
-                    <label for="image" class="form-label"><b>Image</b></label>
-                    <input type="text" name="listing[image]" placeholder="enter image URL/Link" class="form-control" >
-
+                    <label for="image" class="form-label"><b>Upload Listing Image</b></label>
+                    <input type="file" name="listing[image]" class="form-control">
                 </div>
                 <div class="row">
                     <div class="mb-3 col-md-4">
@@ -43,7 +41,8 @@
 
                 <div class="mb-3">
                     <label for="location" class="form-label"><b>Location</b></label>
-                    <input type="text" name="listing[location]" placeholder="enter location" class="form-control" required>
+                    <input type="text" name="listing[location]" placeholder="enter location" class="form-control"
+                        required>
 
                 </div>
                 <br>
