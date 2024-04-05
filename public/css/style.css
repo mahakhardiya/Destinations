@@ -1,19 +1,21 @@
 body {
-        font-family: "Plus Jakarta Sans", sans-serif !important;
-        font-optical-sizing: auto;
-        font-style: normal;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-}
-.container{
-    flex:1;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-optical-sizing: auto;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.add{
+.container {
+    flex: 1;
+}
+
+.add {
     background-color: #fe424d !important;
     border: none !important;
 }
+
 .navbar {
     height: 5rem;
     background-color: white;
@@ -22,42 +24,44 @@ body {
 .fa-compass {
     color: #fe424d;
     font-size: 2rem;
-} 
-
-.nav-link{
-    color: #222222 !important; 
 }
 
-.f-info-links{
-    text-decoration : none;
+.nav-link {
+    color: #222222 !important;
+}
+
+.f-info-links {
+    text-decoration: none;
     color: #222222;
 }
 
-.f-info-links a:hover{
-    text-decoration : underline;  
+.f-info-links a:hover {
+    text-decoration: underline;
 }
 
-.f-info-links, .f-info-socials, .f-info-brand{
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.f-info-socials i{
+.f-info-socials i {
     font-size: 1.2rem;
     margin-right: 1rem;
 }
 
-.f-info-socials i:hover{
+.f-info-socials i:hover {
     cursor: pointer;
 }
 
-.f-info{
+.f-info {
     text-align: center;
     height: 8rem;
-    display: flex;    
-    background-color:#ebebeb;
+    display: flex;
+    background-color: #ebebeb;
     flex-wrap: wrap;
     justify-content: center;
     align-items: space-evenly;
@@ -67,11 +71,11 @@ body {
     padding-top: 0.5rem;
 }
 
-.listing_link{
+.listing_link {
     text-decoration: none;
 }
 
-.listing-card{
+.listing-card {
     border: none !important;
     margin-bottom: 2rem;
 }
@@ -82,11 +86,11 @@ body {
     object-fit: cover !important;
 }
 
-.card-body{
+.card-body {
     padding: 0 !important;
 }
 
-.card-text{
+.card-text {
     font-weight: 400;
 
 }
@@ -96,13 +100,20 @@ body {
     background-color: white;
 }
 
-.show-img{
+.show-img {
     height: 50vh;
 }
-.btns{
+
+.btns {
     display: flex;
 }
-.show-card{
+
+.show-card {
     padding-left: 0;
     padding-right: 0;
+}
+
+#map {
+   height: 400px;
+   width: 80vh;
 }
