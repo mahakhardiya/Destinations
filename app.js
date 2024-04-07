@@ -22,6 +22,8 @@ const listingsRouter = require("./routes/listing.js")
 const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
+const wrapAsync = require("./utils/wrapAsync.js");
+
 const dbUrl = process.env.ATLASDB_URL;
 
 main().then(() => {
@@ -95,6 +97,10 @@ app.use((req, res, next)=>{
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
 app.use("/", userRouter);
+
+app.get("/", wrapAsync(async(req, res)=> {
+       res.redirect("/listings"); 
+}));
 
 app.listen(8080, () => {
     console.log("server is listening to port 8080")
