@@ -24,7 +24,7 @@ const storage = new CloudinaryStorage({
         // Construct the string to sign
         const stringToSign = `allowed_formats=png,jpg,jpeg&folder=${folder}&timestamp=${timestamp}&api_key=${api_key}`;
 
-        // Generate the signature
+        // Generate the signature using SHA1 hashing algorithm
         const signature = cloudinary.utils.api_sign_request(stringToSign, process.env.CLOUD_API_SECRET);
 
         return {
