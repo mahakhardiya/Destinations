@@ -22,6 +22,7 @@ const storage = new CloudinaryStorage({
             folder: 'destinations_DEV',
             allowed_formats: ['png', 'jpg', 'jpeg'], // Add allowed formats here
             timestamp: timestamp, // Use generated timestamp
+            api_key: process.env.CLOUD_API_KEY,
             signature: cloudinary.utils.api_sign_request({ timestamp: timestamp }, process.env.CLOUD_API_SECRET) // Generate signature
         };
     },
