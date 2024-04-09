@@ -4,6 +4,8 @@ if (process.env.NODE_ENV != "production"){
 
 const express = require("express");
 const app = express();
+const favicon = require("serve-favicon");
+
 const mongoose = require("mongoose");
 const path = require("path");
 const methodOverride = require("method-override");
@@ -42,6 +44,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
+app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
 const store = MongoStore.create({
     mongoUrl: dbUrl,
