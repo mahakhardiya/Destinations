@@ -110,7 +110,7 @@ app.listen(8080, () => {
 });
 
 app.all("*", (req, res, next) => {
-    next(new ExpressError(404, "HANDSOME BOY"))
+    next(new ExpressError(404, "Page not found yet"))
 })
 
 app.use((err, req, res, next) => {
