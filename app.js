@@ -101,9 +101,9 @@ app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
 app.use("/", userRouter);
 
-// app.get("/", wrapAsync(async(req, res)=> {
-//        res.redirect("/listings"); 
-// }));
+app.get("/", wrapAsync(async(req, res)=> {
+       res.redirect("/listings"); 
+}));
 
 app.listen(8080, () => {
     console.log("server is listening to port 8080")
