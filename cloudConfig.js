@@ -16,23 +16,19 @@ function generateTimestamp() {
 
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
-    params: (req, file) => {
+    params: async () => {
         const timestamp = generateTimestamp(); // Generate timestamp
-        const api_key = process.env.CLOUD_API_KEY; // Retrieve API key from environment variables
         const folder = 'destinations_DEV'; // Define the folder parameter
-
-        // Construct the string to sign
-        const stringToSign = `allowed_formats=png,jpg,jpeg&folder=${folder}&timestamp=${timestamp}&api_key=${api_key}`;
-
-        // Generate the signature using SHA1 hashing algorithm
-        const signature = cloudinary.utils.api_sign_request(stringToSign, process.env.CLOUD_API_SECRET);
 
         return {
             folder: folder,
-            allowed_formats: ['png', 'jpg', 'jpeg'],
-            timestamp: timestamp,
-            api_key: api_key,
-            signature: signature
+            allowed_formats: ['png', 'jpg', 'jpeg'], // Add allowed formats here
+            timestamp: timestamp, // Use generated timestamp
+            signature: cloudinary.utils.api_sign_request({
+                timestamp: timestamp,
+                folder: folder,
+                api_key: process.env.CLOUD_API_KEY
+            }, process.env.CLOUD_API_SECRET) // Generate signature
         };
     },
 });
