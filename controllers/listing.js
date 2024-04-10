@@ -8,6 +8,27 @@ module.exports.index = async (req, res) => {
     res.render("listings/index.ejs", { allListings })
 };
 
+// Assume your controller name is listingController.js
+
+// Add this function to handle search queries
+module.exports.searchListings = async (req, res) => {
+    const searchTerm = req.query.term;
+    try {
+        const searchResults = await Listing.find({
+            $or: [
+                { title: { $regex: searchTerm, $options: 'i' } },
+                { description: { $regex: searchTerm, $options: 'i' } },
+                { location: { $regex: searchTerm, $options: 'i' } }
+            ]
+        });
+        res.render("listings/searchResults.ejs", { searchResults, searchTerm });
+    } catch (error) {
+        console.error(error);
+        req.flash("error", "An error occurred while searching.");
+        res.redirect("/listings");
+    }
+};
+
 module.exports.showListing = async (req, res) => {
     let { id } = req.params;
     const listing = await Listing.findById(id).
