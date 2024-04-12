@@ -117,4 +117,13 @@ body {
    height: 400px;
    width: 80vh;
 }
+.navbar{
+    z-index: 1000;
+  }
 
+  /* Custom CSS for collapsed navbar */
+.navbar-collapse {
+    background-color: #ffffff; /* Set your desired background color */
+    padding: 10px; /* Adjust padding as needed */
+  }
+  

@@ -5,12 +5,12 @@
 </script>
     <br>
     <div class="row">
-        <div class="col-8 offset-3">
+        <div class="col-md-8 offset-md-2">
             <h3>
                 <%= listing.title %>
             </h3>
         </div><br><br>
-        <div class="card col-6 offset-3 show-card listing-card">
+        <div class="card col-md-6 offset-md-3 col-sm-10 offset-sm-1 show-card listing-card">
             <img src="<%= listing.image.url %>" 
             class="card-img-top show-img" 
             alt="listing_image">
@@ -116,9 +116,9 @@
                 </div> 
                 <% } %>          
             </div>
-            <div class="col-6 offset-3 mb-3 mt-1">
+            <div class="col-md-6 offset-md-3 col-sm-10 offset-sm-1 mb-3 mt-1">
                 <h3>Where you'll be</h3>
-                <div id="map"></div>
+                <div id="map" style="width: 100%; height: 300px;"></div>
             </div>
             </div>
 
